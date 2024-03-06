@@ -223,11 +223,10 @@ headers = {
 
 response = requests.post(url, json={'query': query}, headers=headers)
 
-if response.status_code == 200:
-    print(response.text)
-else:
+if response.status_code != 200:
     print("HTTP response status code:", response.status_code)
-    print(response.text)
+
+print(response.text)
 ```
 
 #### Get a single content
@@ -289,9 +288,8 @@ headers = {
 
 response = requests.post(url, json={'query': query}, headers=headers)
 
-if response.status_code == 200:
-    print(response.text)
-else:
+if response.status_code != 200:
     print("HTTP response status code:", response.status_code)
-    print(response.text)
+
+print(response.text)
 ```
