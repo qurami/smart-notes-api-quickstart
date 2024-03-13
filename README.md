@@ -58,23 +58,23 @@ query getContents{
       node{
         id
         name
-        keyPointsGenerationProcessStatus
-        keyPointsTranslationProcessStatus
-        keyPointsLocale
-        keyPoints{
-          title
-          text
-          localizedData{
-            locale
-            title
-            text
-          }
-        }
         data{
           ... on Lesson{
             speakers{
               name
               bio
+            }
+            keyPointsGenerationProcessStatus
+            keyPointsTranslationProcessStatus
+            keyPointsLocale
+            keyPoints{
+              title
+              text
+              localizedData{
+                locale
+                title
+                text
+              }
             }
           }
           ... on Talk{
@@ -82,6 +82,18 @@ query getContents{
             speakers{
               name
               bio
+            }
+            keyPointsGenerationProcessStatus
+            keyPointsTranslationProcessStatus
+            keyPointsLocale
+            keyPoints{
+              title
+              text
+              localizedData{
+                locale
+                title
+                text
+              }
             }
           }
         }
@@ -111,23 +123,23 @@ query getContent{
   getContent(contentID: "insertYourContentIDHere") {
     id
     name
-    keyPointsGenerationProcessStatus
-    keyPointsTranslationProcessStatus
-    keyPointsLocale
-    keyPoints{
-      title
-      text
-      localizedData{
-        locale
-        title
-        text
-      }
-    }
     data{
       ... on Lesson{
         speakers{
           name
           bio
+        }
+        keyPointsGenerationProcessStatus
+        keyPointsTranslationProcessStatus
+        keyPointsLocale
+        keyPoints{
+          title
+          text
+          localizedData{
+            locale
+            title
+            text
+          }
         }
       }
       ... on Talk{
@@ -135,6 +147,18 @@ query getContent{
         speakers{
           name
           bio
+        }
+        keyPointsGenerationProcessStatus
+        keyPointsTranslationProcessStatus
+        keyPointsLocale
+        keyPoints{
+          title
+          text
+          localizedData{
+            locale
+            title
+            text
+          }
         }
       }
     }
@@ -171,23 +195,23 @@ query getContents{
       node{
         id
         name
-        keyPointsGenerationProcessStatus
-        keyPointsTranslationProcessStatus
-        keyPointsLocale
-        keyPoints{
-          title
-          text
-          localizedData{
-            locale
-            title
-            text
-          }
-        }
         data{
           ... on Lesson{
             speakers{
               name
               bio
+            }
+            keyPointsGenerationProcessStatus
+            keyPointsTranslationProcessStatus
+            keyPointsLocale
+            keyPoints{
+              title
+              text
+              localizedData{
+                locale
+                title
+                text
+              }
             }
           }
           ... on Talk{
@@ -195,6 +219,18 @@ query getContents{
             speakers{
               name
               bio
+            }
+            keyPointsGenerationProcessStatus
+            keyPointsTranslationProcessStatus
+            keyPointsLocale
+            keyPoints{
+              title
+              text
+              localizedData{
+                locale
+                title
+                text
+              }
             }
           }
         }
@@ -243,23 +279,23 @@ query getContent{
   getContent(contentID: "%s") {
     id
     name
-    keyPointsGenerationProcessStatus
-    keyPointsTranslationProcessStatus
-    keyPointsLocale
-    keyPoints{
-      title
-      text
-      localizedData{
-        locale
-        title
-        text
-      }
-    }
     data{
       ... on Lesson{
         speakers{
           name
           bio
+        }
+        keyPointsGenerationProcessStatus
+        keyPointsTranslationProcessStatus
+        keyPointsLocale
+        keyPoints{
+          title
+          text
+          localizedData{
+            locale
+            title
+            text
+          }
         }
       }
       ... on Talk{
@@ -267,6 +303,18 @@ query getContent{
         speakers{
           name
           bio
+        }
+        keyPointsGenerationProcessStatus
+        keyPointsTranslationProcessStatus
+        keyPointsLocale
+        keyPoints{
+          title
+          text
+          localizedData{
+            locale
+            title
+            text
+          }
         }
       }
     }
