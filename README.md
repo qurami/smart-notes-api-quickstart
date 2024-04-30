@@ -96,6 +96,88 @@ query getContents{
               }
             }
           }
+          ... on Panel {
+            panelists {
+              id
+              originalAudioFileName
+              role
+              speaker {
+                id
+                name
+                bio
+                role
+              }
+            }
+            panelProcessStatus:processStatus
+            startAt
+            visibleHighlights {
+              id
+              title
+              localizedTitle {
+                locale
+                title
+              }
+              panelistContributions {
+                panelist {
+                  id
+                  originalAudioFileName
+                  role
+                  speaker {
+                    id
+                    name
+                    bio
+                    role
+                  }
+                }
+                text
+                localizedText {
+                  locale
+                  text
+                }
+              }
+            }
+            hiddenHighlights {
+              id
+              title
+              localizedTitle {
+                locale
+                title
+              }
+              panelistContributions {
+                panelist {
+                  id
+                  originalAudioFileName
+                  role
+                  speaker {
+                    id
+                    name
+                    bio
+                    role
+                  }
+                }
+                text
+                localizedText {
+                  locale
+                  text
+                }
+              }
+            }
+          }
+          ... on GenericContent{
+            genericContentProcessStatus:processStatus
+            summary{
+              text
+              title
+              localizedTitle{
+                locale
+                title
+              }
+              localizedText{
+                locale
+                text
+              }
+            }
+          }
         }
         references{
           id
