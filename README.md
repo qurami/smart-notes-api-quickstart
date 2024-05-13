@@ -58,6 +58,10 @@ query getContents{
       node{
         id
         name
+        localizedName {
+          name
+          locale
+        }
         data{
           ... on Lesson{
             speakers{
@@ -205,6 +209,10 @@ query getContent{
   getContent(contentID: "insertYourContentIDHere") {
     id
     name
+    localizedName {
+      name
+      locale
+    }
     data{
       ... on Lesson{
         speakers{
@@ -359,6 +367,10 @@ query getContents{
       node{
         id
         name
+        localizedName {
+          name
+          locale
+        }
         data{
           ... on Lesson{
             speakers{
@@ -525,6 +537,10 @@ query getContent{
   getContent(contentID: "%s") {
     id
     name
+    localizedName {
+      name
+      locale
+    }
     data{
       ... on Lesson{
         speakers{
