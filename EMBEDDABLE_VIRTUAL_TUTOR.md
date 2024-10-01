@@ -9,8 +9,6 @@ The aim of this document is to provide developers with all the pieces of informa
 
 ## Overview
 
-Smart Notes Embeddable Virtual Tutor provide partners with the ability to integrate the Smart Notes Virtual Tutor in their own application.
-
 To get access to the Embeddable Virtual Tutor you must first purchase a Smart Notes license.
 
 ## Integrate Embeddable Virtual Tutor
