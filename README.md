@@ -346,6 +346,21 @@ query getContent{
 }
 ```
 
+#### Generate a token for external users to access the Embeddable Virtual Tutor
+
+The embeddableVirtualTutorID can be found in the [Smart Notes Manager app](https://manager.smart-notes.extrai.app) > Menu: Embed Virtual Tutor > Tab: Embedding > Click on: Copy Virtual Tutor ID.
+
+The generated login token is valid for 1 hour. Once the Embeddable Virtual Tutor app has logged in via this token, the app will remain logged in regardless of the expiration of this token.
+
+```graphql
+mutation genTokenForEmbeddableVirtualTutorGuest{
+    genTokenForEmbeddableVirtualTutorGuest(
+      embeddableVirtualTutorID: "insertYourEmbeddableVirtualTutorIDHere",
+      externalUserID: "insertYourExternalUserIDHere"
+  )
+}
+```
+
 ### Run queries via Python
 
 #### Get the list of contents
@@ -679,6 +694,41 @@ headers = {
 }
 
 response = requests.post(url, json={'query': query}, headers=headers)
+
+if response.status_code != 200:
+    print("HTTP response status code:", response.status_code)
+
+print(response.text)
+```
+
+#### Generate a token for external users to access the Embeddable Virtual Tutor
+
+The embeddableVirtualTutorID can be found in the [Smart Notes Manager app](https://manager.smart-notes.extrai.app) > Menu: Embed Virtual Tutor > Tab: Embedding > Click on: Copy Virtual Tutor ID.
+
+The generated login token is valid for 1 hour. Once the Embeddable Virtual Tutor app has logged in via this token, the app will remain logged in regardless of the expiration of this token.
+
+```python
+import requests
+
+url = 'https://api.smart-notes.extrai.app/v1/graphql'
+api_key = 'insertYourAPIKeyHere'
+embeddable_virtual_tutor_id = 'insertYourEmbeddableVirtualTutorIDHere'
+external_user_id = 'insertYourExternalUserIDHere'
+
+mutation = """
+mutation genTokenForEmbeddableVirtualTutorGuest{
+    genTokenForEmbeddableVirtualTutorGuest(
+      embeddableVirtualTutorID: "%s",
+      externalUserID: "%s"
+  )
+}
+""" % (embeddable_virtual_tutor_id, external_user_id)
+
+headers = {
+    'X-API-Key': api_key
+}
+
+response = requests.post(url, json={'query': mutation}, headers=headers)
 
 if response.status_code != 200:
     print("HTTP response status code:", response.status_code)
