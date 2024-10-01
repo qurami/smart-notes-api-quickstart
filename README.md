@@ -346,14 +346,17 @@ query getContent{
 }
 ```
 
-#### Generate a token to make a login into embeddable virtual tutor for an external user
+#### Generate a token to login into Embeddable Virtual Tutor for an external user
+
+The embeddableVirtualTutorID can be found in the [Smart Notes Manager app](https://manager.smart-notes.extrai.app) > Menu: Embed Virtual Tutor > Tab: Embedding > Click on: Copy Virtual Tutor ID.
+
+The generated login token is valid for 1 hour. Once the Embeddable Virtual Tutor app has logged in via this token, the app will remain logged in regardless of the expiration of this token.
 
 ```graphql
-# The generated token is valid for 1 hour.
 mutation genTokenForEmbeddableVirtualTutorGuest{
     genTokenForEmbeddableVirtualTutorGuest(
-      embeddableVirtualTutorID: "the-embaddable-virtual-tutor-id",
-      externalUserID: "extarnal-user-id-here"
+      embeddableVirtualTutorID: "insertYourEmbeddableVirtualTutorIDHere",
+      externalUserID: "insertYourExternalUserIDHere"
   )
 }
 ```
@@ -698,16 +701,19 @@ if response.status_code != 200:
 print(response.text)
 ```
 
+#### Generate a token to login into Embeddable Virtual Tutor for an external user
 
-#### Generate a token to make a login into embeddable virtual tutor for an external user
+The embeddableVirtualTutorID can be found in the [Smart Notes Manager app](https://manager.smart-notes.extrai.app) > Menu: Embed Virtual Tutor > Tab: Embedding > Click on: Copy Virtual Tutor ID.
+
+The generated login token is valid for 1 hour. Once the Embeddable Virtual Tutor app has logged in via this token, the app will remain logged in regardless of the expiration of this token.
 
 ```python
 import requests
 
 url = 'https://api.smart-notes.extrai.app/v1/graphql'
 api_key = 'insertYourAPIKeyHere'
-embeddable_virtual_tutor_id = 'embeddableVirtualTutorID'
-external_user_id = 'externalUserID'
+embeddable_virtual_tutor_id = 'insertYourEmbeddableVirtualTutorIDHere'
+external_user_id = 'insertYourExternalUserIDHere'
 
 mutation = """
 mutation genTokenForEmbeddableVirtualTutorGuest{
