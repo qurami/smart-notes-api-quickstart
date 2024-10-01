@@ -346,6 +346,18 @@ query getContent{
 }
 ```
 
+#### Generate a token to make a login into embeddable virtual tutor for an external user
+
+```graphql
+# The generated token is valid for 1 hour.
+mutation genTokenForEmbeddableVirtualTutorGuest{
+    genTokenForEmbeddableVirtualTutorGuest(
+      embeddableVirtualTutorID: "the-embaddable-virtual-tutor-id",
+      externalUserID: "extarnal-user-id-here"
+  )
+}
+```
+
 ### Run queries via Python
 
 #### Get the list of contents
@@ -679,6 +691,38 @@ headers = {
 }
 
 response = requests.post(url, json={'query': query}, headers=headers)
+
+if response.status_code != 200:
+    print("HTTP response status code:", response.status_code)
+
+print(response.text)
+```
+
+
+#### Generate a token to make a login into embeddable virtual tutor for an external user
+
+```python
+import requests
+
+url = 'https://api.smart-notes.extrai.app/v1/graphql'
+api_key = 'insertYourAPIKeyHere'
+embeddable_virtual_tutor_id = 'embeddableVirtualTutorID'
+external_user_id = 'externalUserID'
+
+mutation = """
+mutation genTokenForEmbeddableVirtualTutorGuest{
+    genTokenForEmbeddableVirtualTutorGuest(
+      embeddableVirtualTutorID: "%s",
+      externalUserID: "%s"
+  )
+}
+""" % (embeddable_virtual_tutor_id, external_user_id)
+
+headers = {
+    'X-API-Key': api_key
+}
+
+response = requests.post(url, json={'query': mutation}, headers=headers)
 
 if response.status_code != 200:
     print("HTTP response status code:", response.status_code)
