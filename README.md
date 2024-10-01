@@ -346,7 +346,7 @@ query getContent{
 }
 ```
 
-#### Generate a token to login into Embeddable Virtual Tutor for an external user
+#### Generate a token for external users to access the Embeddable Virtual Tutor
 
 The embeddableVirtualTutorID can be found in the [Smart Notes Manager app](https://manager.smart-notes.extrai.app) > Menu: Embed Virtual Tutor > Tab: Embedding > Click on: Copy Virtual Tutor ID.
 
@@ -701,7 +701,7 @@ if response.status_code != 200:
 print(response.text)
 ```
 
-#### Generate a token to login into Embeddable Virtual Tutor for an external user
+#### Generate a token for external users to access the Embeddable Virtual Tutor
 
 The embeddableVirtualTutorID can be found in the [Smart Notes Manager app](https://manager.smart-notes.extrai.app) > Menu: Embed Virtual Tutor > Tab: Embedding > Click on: Copy Virtual Tutor ID.
 
